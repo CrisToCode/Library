@@ -40,7 +40,10 @@ public class Category {
 
     @Override
     public String toString() {
-        return
-                " categoryName = '" + categoryName + '\'';
+        return "Category{" +
+                " id= " + id +
+                ", categoryName= '" + categoryName + '\'' +
+                ", priority= " + priority +
+                " }";
     }
 }

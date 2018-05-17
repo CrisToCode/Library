@@ -27,17 +27,8 @@ public class BookData {
     public void setBookList(List<Book> bookList) {
         this.bookList = bookList;
     }
-    public void filterBooks(int year){
-        for (Book book : bookList) {
-            if(book.getPublicationYear()<year)
-            System.out.println(book);
-        }
-    }
-    public void filterBooksWithLambda(int year){
-        bookList.stream()
-                .filter(book -> book.getPublicationYear()<year)
-                .forEach(book -> System.out.println(book));
-    }
+
+
     public void sortBooksByPublicationYearEarliest() {
         bookList.stream().sorted(Comparator.comparing(Book::getPublicationYear)).collect(Collectors.toList())
                 .forEach(book -> System.out.println(book));

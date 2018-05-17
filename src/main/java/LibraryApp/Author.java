@@ -2,13 +2,13 @@ package LibraryApp;
 
 public class Author {
 
-    int ordinalNumber ;
+    private int ordinalNumber;
 
-    String name;
+    private String name;
 
-    int age;
+    private int age;
 
-    static int id =0;
+    private static int id = 0;
 
     public int getOrdinalNumber() {
         return ordinalNumber;
@@ -34,7 +34,7 @@ public class Author {
         this.age = age;
     }
 
-    public Author( String name, int age) {
+    Author(String name, int age) {
         id++;
         this.ordinalNumber = id;
         this.name = name;
@@ -43,7 +43,9 @@ public class Author {
 
     @Override
     public String toString() {
-        return "Author`s" +
-                " name = '" + name + '\'';
+        return "Author`s " +
+                "{" + ordinalNumber + "." +
+                "'" + name +
+                '\'' + ", age= " + age + " }";
     }
 }

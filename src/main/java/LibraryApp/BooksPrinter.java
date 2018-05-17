@@ -31,11 +31,8 @@ public class BooksPrinter {
         return bookList.stream().filter(book -> book.getCategory().getCategoryName().equals("Wzorce projektowe")).collect(Collectors.toList());
     }
 
-    public void showAuthors(List<Author> authorList) {
-        for (Author author : authorList) {
-            System.out.println(author);
-        }
-    }
+
+
 
     //Wyświetlenie autorów oraz liczby książek, które wydali
 

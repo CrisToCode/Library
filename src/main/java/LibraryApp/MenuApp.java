@@ -34,12 +34,13 @@ public class MenuApp {
     public void chooseOption(BookData bookData, AuthorData authorData, CategoryData categoryData) {
         Scanner scanner = new Scanner(System.in);
         int option = scanner.nextInt();
-        MenuApp menuApp = new MenuApp();
         ImportFile importFile = new ImportFile();
         BooksPrinter booksPrinter = new BooksPrinter(new TitleFirstBooksPrintStrategy());
         authorData.setAuthorList(importFile.authorsReader());
         categoryData.setCategoryList(importFile.categoryReader());
         bookData.setBookList(importFile.booksReader());
+        AuthorService authorService = new AuthorService();
+        BookService bookService = new BookService();
 
 
         while (option != 15) {
@@ -52,10 +53,7 @@ public class MenuApp {
                     booksPrinter.printBooks(bookData.getAllBooks());
                     break;
                 case 3:
-                    System.out.println("Podaj rok książek: ");
-                    int year = scanner.nextInt();
-                    System.out.println("Książki przed rokiem: " + year);
-                    bookData.filterBooksWithLambda(year);
+                    bookService.filterBooksWithLambda(bookData.getAllBooks());
                     break;
                 case 4:
                     bookData.sortBooksByPublicationYearEarliest();
@@ -79,17 +77,10 @@ public class MenuApp {
                     booksPrinter.printBooks(booksPrinter.showBooksFromDesignPaternCategory(bookData.getAllBooks()));
                     break;
                 case 11:
-                    scanner = new Scanner(System.in);
-                    System.out.println("Podaj imię i nazwisko nowego autora");
-                    String newAuthorsName;
-                    newAuthorsName = scanner.nextLine();
-                    System.out.println("Podaj jego wiek");
-                    int age;
-                    age = scanner.nextInt();
-                    authorData.addNewAuthor(authorData.getAuthorList(), newAuthorsName, age);
+                    authorService.addNewAuthor(authorData.getAuthorList());
                     break;
                 case 12:
-                    booksPrinter.showAuthors(authorData.getAuthorList());
+                    authorService.showAuthors(authorData.getAuthorList());
                     break;
                 case 13:
                     booksPrinter.showAuthorsAndBooksTheyWrote(bookData.getAllBooks(), authorData.getAuthorList());
@@ -130,7 +121,7 @@ public class MenuApp {
 
         menu.chooseOption(bookData, authorData, categoryData);
 
-        //showAuthor();
+
     }
 }
 

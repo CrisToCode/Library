@@ -6,7 +6,7 @@ public class Book {
 
     private String title;
 
-    private String ISBN;
+    private String isbn;
 
     private int publicationYear;
 
@@ -49,12 +49,12 @@ public class Book {
         this.title = title;
     }
 
-    public String getISBN() {
-        return ISBN;
+    public String getIsbn() {
+        return isbn;
     }
 
-    public void setISBN(String ISBN) {
-        this.ISBN = ISBN;
+    public void setIsbn(String isbn) {
+        this.isbn = isbn;
     }
 
     public int getPublicationYear() {
@@ -65,9 +65,9 @@ public class Book {
         this.publicationYear = publicationYear;
     }
 
-    public Book(String title, String ISBN, int publicationYear, String bookCover, List<Author> authorList, Category category) {
+    public Book(String title, String Isbn, int publicationYear, String bookCover, List<Author> authorList, Category category) {
         this.title = title;
-        this.ISBN = ISBN;
+        this.isbn = Isbn;
         this.publicationYear = publicationYear;
         this.bookCover = bookCover;
         this.authorList = authorList;
@@ -77,12 +77,12 @@ public class Book {
     @Override
     public String toString() {
         return "Book{" +
-                "title='" + title + '\'' +
-                ", ISBN='" + ISBN + '\'' +
-                ", publicationYear=" + publicationYear +
-                ", bookCover=" + bookCover + '\'' +
-                ", authorList=" + authorList +
-                ", category=" + category +
+                "title= '" + title  +
+                ", isbn= '" + isbn  +
+                ", publicationYear= " + publicationYear +
+                ", bookCover= " + bookCover  +
+                ", authorList= " + authorList +
+                ", category= " + category +
                 '}';
     }
 }

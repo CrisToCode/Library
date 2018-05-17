@@ -1,16 +1,14 @@
 package LibraryApp;
 
-import java.security.PublicKey;
 import java.util.Comparator;
 import java.util.List;
-import java.util.OptionalDouble;
 import java.util.stream.Collectors;
 
 public class BookFunctions {
 
     public Book searchISBNNumber(List<Book> books, String ISBN) {
         Book varBook;
-        varBook = books.stream().filter(book -> book.getISBN().equals(ISBN)).findFirst().get();
+        varBook = books.stream().filter(book -> book.getIsbn().equals(ISBN)).findFirst().get();
         return varBook;
     }
 

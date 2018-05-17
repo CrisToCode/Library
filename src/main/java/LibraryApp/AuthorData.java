@@ -14,6 +14,7 @@ public class AuthorData  {
     public static AuthorData getInstance(){
         return instance;
     }
+
     public void setAuthorList(List<Author> authorList) {
         this.authorList = authorList;
     }
@@ -21,12 +22,7 @@ public class AuthorData  {
     public List<Author> getAuthorList() {
         return authorList;
     }
-    public void filterAuthorsByAge(int age){
-        authorList.stream()
-                .filter(author -> author.getAge()<age)
-                .forEach(author -> System.out.println(author));
-    }
-    public void addNewAuthor( List<Author> authorList, String newAuthorsName, int age){
-        authorList.add(new Author(newAuthorsName, age));
-    }
+
+
+
 }
